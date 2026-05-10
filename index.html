@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quotidian — A Gallery of Words</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="masthead">
+      <div class="masthead-title">Quotidian</div>
+      <div class="masthead-subtitle">A Gallery of Words</div>
+    </div>
+    <div class="header-controls">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" placeholder="Search quotes or authors…" />
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" id="gridBtn" title="Grid view">⊞</button>
+        <button class="view-btn" id="listBtn" title="List view">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-label">Vol. I — The Archive</div>
+      <h1 class="hero-heading">Words that <em>outlived</em> their authors.</h1>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" id="totalQuotes">—</div>
+        <div class="stat-label">Quotes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="totalPages">—</div>
+        <div class="stat-label">Pages</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <span class="sort-label">Sort —</span>
+      <button class="sort-btn active" data-sort="default">Default</button>
+      <button class="sort-btn" data-sort="alpha-author">Author A–Z</button>
+      <button class="sort-btn" data-sort="alpha-quote">Quote A–Z</button>
+      <button class="sort-btn" data-sort="length">Shortest</button>
+    </div>
+    <span class="results-info" id="resultsInfo">Loading…</span>
+  </div>
+
+  <!-- MAIN -->
+  <main id="main">
+    <div class="loading-wrap">
+      <div class="spinner"></div>
+      <div class="loading-text">Fetching quotes…</div>
+    </div>
+  </main>
+
+  <!-- PAGINATION -->
+  <div class="pagination" id="pagination"></div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-num" id="modalNum"></div>
+      <div class="modal-mark">"</div>
+      <div class="modal-quote" id="modalQuote"></div>
+      <div class="modal-author" id="modalAuthor"></div>
+      <div class="modal-copy">
+        <button class="btn-copy" id="copyBtn">Copy Quote</button>
+        <button class="btn-copy" id="copyFullBtn">Copy with Author</button>
+      </div>
+    </div>
+  </div>
+
+<script src="./index.js"></script>
+</body>
+</html>
